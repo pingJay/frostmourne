@@ -13,7 +13,7 @@ import java.sql.SQLException;
 public class FrostmourneDataSource {
     private static final Logger logger = Logger.getLogger(FrostmourneDataSource.class);
 
-    private static final String PROP_PATH = "/c3p0.config";
+    private static final String PROP_PATH = "/home/pingjie/wordspace/frostmourne/frostmourne-common/src/main/resource/c3p0.properties";
     private static final String USER = "user";
     private static final String PASSWORD = "password";
     private static final String DRIVER = "driverClass";
@@ -73,7 +73,7 @@ public class FrostmourneDataSource {
         return frostmourneDataSource;
     }
 
-    public final Connection getconnection(){
+    public synchronized final Connection getconnection(){
         try {
             return dataSource.getConnection();
         } catch (SQLException e) {
