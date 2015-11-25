@@ -3,6 +3,8 @@ package com.pj.bigdata.frostmourne.database;
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 import com.pj.bigdata.frostmourne.utils.Props;
 import org.apache.log4j.Logger;
+
+import javax.sql.DataSource;
 import java.beans.PropertyVetoException;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -81,4 +83,5 @@ public class FrostmourneDataSource {
             throw new RuntimeException("无法从数据源获取连接", e);
         }
     }
+
 }

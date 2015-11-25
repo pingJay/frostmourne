@@ -9,15 +9,16 @@ import java.io.IOException;
  * Created by pingjie on 15-11-19.
  */
 public class ExecutorProtocolImpl implements ExecutorProtocol {
-    public boolean execJob() {
-        return false;
+    public boolean execJob(int i,int y) {
+        System.out.println(i+y);
+        return true;
     }
 
     public long getProtocolVersion(String s, long l) throws IOException {
-        return ExecutorProtocol.VERSION;
+        return versionID;
     }
 
     public ProtocolSignature getProtocolSignature(String s, long l, int i) throws IOException {
-        return null;
+        return new ProtocolSignature(versionID,null);
     }
 }
